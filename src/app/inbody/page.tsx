@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, HTMLMotionProps } from 'framer-motion';
 import { CheckCircle2, ChevronDown, Activity, Loader2 } from 'lucide-react';
 import Image from 'next/image';
 import { Cairo } from 'next/font/google';
@@ -66,7 +66,7 @@ function SectionTitle() {
   );
 }
 
-interface InputFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
+interface InputFieldProps extends HTMLMotionProps<"input"> {
   label: string;
   required?: boolean;
 }
@@ -87,7 +87,7 @@ function InputField({ label, required, ...props }: InputFieldProps) {
   );
 }
 
-interface SelectFieldProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
+interface SelectFieldProps extends HTMLMotionProps<"select"> {
   label: string;
   options: { label: string; value: string }[];
   required?: boolean;
@@ -146,14 +146,33 @@ function LeadForm() {
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
-    // Simulate API call
+    
+    const formData = new FormData(e.currentTarget);
+    const name = formData.get('name') as string;
+    const phone = formData.get('phone') as string;
+    const branch = formData.get('branch') as string;
+    const goal = formData.get('goal') as string;
+
+    const branchLabel = branch === 'alahsa_hofuf' ? 'الاحساء الهفوف' : branch;
+    const goalLabel = goal === 'yes' ? 'نعم، بالتأكيد' : goal === 'maybe' ? 'أريد معرفة المزيد' : goal;
+
+    const message = `طلب فحص واستشارة جديد:
+الاسم: ${name}
+الجوال: ${phone}
+الفرع: ${branchLabel}
+الهدف: ${goalLabel}`;
+
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/966591640335?text=${encodedMessage}`;
+
     setTimeout(() => {
       setIsLoading(false);
+      window.open(whatsappUrl, "_blank");
       setIsSuccess(true);
-    }, 1500);
+    }, 500);
   };
 
   return (
@@ -191,9 +210,7 @@ function LeadForm() {
               name="branch"
               required
               options={[
-                { label: 'الرياض', value: 'riyadh' },
-                { label: 'جدة', value: 'jeddah' },
-                { label: 'الدمام', value: 'dammam' },
+                { label: 'الاحساء الهفوف', value: 'alahsa_hofuf' },
               ]}
             />
 
