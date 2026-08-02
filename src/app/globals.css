@@ -1,49 +1,171 @@
+/* ─────────────────────────────────────────────
+   To Fitness Clone  |  globals.css (Premium Redesign)
+   Primary: #4e7a27 | Font: Amazon Ember / Tajawal
+   Direction: RTL | Language: Arabic
+───────────────────────────────────────────── */
+
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap');
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --primary:        #4e7a27;
+  --primary-dark:   #3b5c1d;
+  --primary-light:  #639a32;
+  --primary-vlight: #a7d380;
+  --primary-pale:   #f4f8f1;
+  --text-main:      #1a1d1b;
+  --text-muted:     #5b6360;
+  --text-light:     #999999;
+  --bg-white:       #ffffff;
+  --bg-off:         #fafafa;
+  --bg-grey:        #f3f5f4;
+  --border:         #e2e6e4;
+  --red:            #f43f5e;
+  --gold:           #f59e0b;
+  --radius-sm:      8px;
+  --radius:         12px;
+  --radius-lg:      20px;
+  --radius-xl:      24px;
+  
+  /* Premium Soft Shadows */
+  --shadow-sm:      0 2px 8px rgba(0,0,0,0.04);
+  --shadow:         0 8px 24px rgba(0,0,0,0.06);
+  --shadow-lg:      0 16px 48px rgba(0,0,0,0.08);
+  --shadow-primary: 0 8px 24px rgba(78, 122, 39, 0.25);
+  
+  --transition:     all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --font:           'Amazon-Ember', 'Tajawal', sans-serif;
+  --header-h:       76px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@font-face {
+  font-family: 'Amazon-Ember';
+  src: url('https://cdn.salla.network/fonts/amazon_ember.css');
 }
 
-html {
-  height: 100%;
+*, *::before, *::after { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
 }
 
-html,
+html { 
+  scroll-behavior: smooth; 
+  font-size: 15px; 
+}
+
 body {
-  max-width: 100vw;
+  font-family: var(--font);
+  color: var(--text-main);
+  background: var(--bg-off);
+  direction: rtl;
+  text-align: right;
   overflow-x: hidden;
+  line-height: 1.6;
 }
 
-body {
-  min-height: 100%;
+a { 
+  text-decoration: none; 
+  color: inherit; 
+  transition: var(--transition);
+}
+
+img { 
+  display: block; 
+  max-width: 100%; 
+}
+
+ul { 
+  list-style: none; 
+}
+
+button { 
+  cursor: pointer; 
+  font-family: var(--font); 
+  border: none; 
+  background: none; 
+  transition: var(--transition);
+}
+
+input, textarea, select { 
+  font-family: var(--font); 
+}
+
+/* ── Container ── */
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ── Section spacing ── */
+section { 
+  margin-bottom: 72px; 
+}
+
+/* ── Section title ── */
+.section-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 32px;
   display: flex;
-  flex-direction: column;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  align-items: center;
+  gap: 16px;
+  letter-spacing: -0.5px;
+}
+.section-title::after {
+  content: '';
+  display: block;
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to left, transparent, var(--border) 50%, var(--border));
+}
+.section-title .title-link {
+  font-size: .88rem;
+  font-weight: 600;
+  color: var(--primary);
+  white-space: nowrap;
+  background: var(--primary-pale);
+  padding: 6px 16px;
+  border-radius: 30px;
+}
+.section-title .title-link:hover { 
+  background: var(--primary);
+  color: #fff;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+/* ── Animations ── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
-
-a {
-  color: inherit;
-  text-decoration: none;
+.animate-fade-in-up {
+  animation: fadeInUp 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  opacity: 0;
 }
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+/* ── Utility ── */
+.text-primary { color: var(--primary); }
+.text-muted   { color: var(--text-muted); }
+.fw-bold      { font-weight: 700; }
+.fw-black     { font-weight: 900; }
+.mt-0  { margin-top: 0; }
+.mb-0  { margin-bottom: 0; }
+.mt-16 { margin-top: 16px; }
+.mt-24 { margin-top: 24px; }
+.mb-24 { margin-bottom: 24px; }
+.mb-48 { margin-bottom: 48px; }
+.mb-64 { margin-bottom: 64px; }
+.d-flex { display: flex; }
+.align-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.gap-8  { gap: 8px; }
+.gap-16 { gap: 16px; }
+.w-full { width: 100%; }
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap;
 }
