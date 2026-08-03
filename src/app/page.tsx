@@ -150,7 +150,7 @@ export default function Home() {
               src="https://cdn.salla.sa/form-builder/8mH1xr0ItDnUFturQGOnSWiB4hTaO1G62w6O5bPn.webp"
               alt="عروض حصرية"
             />
-            <div className="overlay"><span>احجز موعدك الآن</span></div>
+            {/* <div className="overlay"><span>احجز موعدك الآن</span></div> */}
           </a>
         </section>
 
@@ -167,7 +167,7 @@ export default function Home() {
               src="https://cdn.salla.sa/form-builder/rPhNVi1IUbK2HQFOF5k4DQoWKJw90dgXySKe35BY.jpg"
               alt="عروض خاصة"
             />
-            <div className="overlay"><span>احجز موعدك الآن</span></div>
+            {/* <div className="overlay"><span>احجز موعدك الآن</span></div> */}
           </a>
         </section>
 
