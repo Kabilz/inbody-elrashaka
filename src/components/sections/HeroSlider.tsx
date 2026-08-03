@@ -7,7 +7,7 @@ import styles from './HeroSlider.module.css';
 const SLIDES = [
   {
     id: 1,
-    image: 'https://cdn.files.salla.network/homepage/22564112/537b60cf-9b74-49d7-8a88-f8b7789b4ffa.webp',
+    image: 'https://images.unsplash.com/photo-1511688878353-3a2f5be94cd7?auto=format&fit=crop&q=80&w=1920',
     title: 'وصل حديثاً\nمنتجات عالمية',
     desc: 'اكتشف أحدث منتجات التغذية والرشاقة المختارة بعناية',
     btnText: 'تسوق الآن',
@@ -15,7 +15,7 @@ const SLIDES = [
   },
   {
     id: 2,
-    image: 'https://cdn.salla.sa/form-builder/QILJO4Ez4VT34YcMD2K5dqNvFByBsqZUj24nZqLs.jpg',
+    image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=1920',
     title: 'احجز موعدك\nمع خبير التغذية',
     desc: 'أخصائيونا يساعدونك في تحقيق وزنك المثالي',
     btnText: 'احجز الآن',
@@ -24,7 +24,7 @@ const SLIDES = [
   },
   {
     id: 3,
-    image: 'https://cdn.salla.sa/form-builder/8mH1xr0ItDnUFturQGOnSWiB4hTaO1G62w6O5bPn.webp',
+    image: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80&w=1920',
     title: 'عروض الصيف\nخصومات حصرية',
     desc: 'خصومات تصل حتى ٤٠٪ على أفضل منتجاتنا',
     btnText: 'اكتشف العروض',
