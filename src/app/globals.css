@@ -4,7 +4,7 @@
    Direction: RTL | Language: Arabic
 ───────────────────────────────────────────── */
 
-@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap');
 
 :root {
   --primary:        #4e7a27;
@@ -33,7 +33,7 @@
   --shadow-primary: 0 8px 24px rgba(78, 122, 39, 0.25);
   
   --transition:     all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  --font:           'Amazon-Ember', 'Tajawal', sans-serif;
+  --font:           'Cairo', sans-serif;
   --header-h:       76px;
 }
 
@@ -168,4 +168,51 @@ section {
 .sr-only {
   position: absolute; width: 1px; height: 1px;
   overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap;
+}
+
+/* ── Promotional Banners Hover Effect ── */
+.promo-banner {
+  display: block;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.3s;
+  position: relative;
+}
+.promo-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.promo-banner .overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 10;
+}
+.promo-banner .overlay span {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 800;
+  transform: translateY(20px);
+  transition: transform 0.3s;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+.promo-banner:hover {
+  box-shadow: var(--shadow-lg);
+}
+.promo-banner:hover img {
+  transform: scale(1.05);
+}
+.promo-banner:hover .overlay {
+  opacity: 1;
+}
+.promo-banner:hover .overlay span {
+  transform: translateY(0);
 }

@@ -1,17 +1,19 @@
 .card {
   background: var(--bg-white);
-  border-radius: var(--radius-lg);
+  border-radius: 12px;
   overflow: hidden;
   transition: var(--transition);
   position: relative;
-  border: 1px solid rgba(0,0,0,0.02);
+  border: 2px solid var(--primary);
   cursor: pointer;
   box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
 }
 .card:hover {
   box-shadow: var(--shadow-lg);
   transform: translateY(-6px);
-  border-color: var(--primary-vlight);
+  border-color: var(--primary-light);
 }
 .imgWrap {
   position: relative;
@@ -76,7 +78,7 @@
   padding: 16px;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  flex: 1;
 }
 .title {
   font-size: .95rem;
@@ -134,23 +136,24 @@
 }
 .atcBtn {
   width: 100%;
-  margin-top: 16px;
-  padding: 12px;
-  background: #111;
+  padding: 14px;
+  background: var(--primary);
   color: #fff;
-  border-radius: 10px;
-  font-size: .9rem;
+  border-radius: 0;
+  font-size: .95rem;
   font-weight: 700;
   transition: var(--transition);
   border: none;
+  border-top: 2px solid var(--primary);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
+  margin-top: auto;
 }
 .atcBtn:hover {
-  background: var(--primary);
+  background: var(--primary-dark);
+  border-top-color: var(--primary-dark);
   box-shadow: var(--shadow-primary);
-  transform: translateY(-2px);
 }

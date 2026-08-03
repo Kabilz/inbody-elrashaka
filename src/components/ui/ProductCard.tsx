@@ -52,11 +52,11 @@ export default function ProductCard({
             </span>
           )}
         </div>
-        
-        <button className={styles.atcBtn}>
-          <i className="fa-solid fa-basket-shopping" /> أضف للسلة
-        </button>
       </div>
+      
+      <button className={styles.atcBtn}>
+        <i className="fa-solid fa-basket-shopping" /> أضف للسلة
+      </button>
     </div>
   );
 }

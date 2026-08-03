@@ -39,15 +39,16 @@ export default function Header() {
                 <i className="fa-solid fa-globe" />
               </button>
               <div className={styles.headerContact}>
-                <a href="tel:+966542600665"><i className="fa-solid fa-phone" /> +966542600665</a>
+                <a href="tel:+966591640335"><i className="fa-solid fa-phone" /> +966591640335</a>
               </div>
             </div>
 
             <div className={styles.navCenter}>
               <Link href="/" className={styles.navLogo}>
                 <img
-                  src="https://cdn.salla.sa/cdn-cgi/image/fit=scale-down,width=400,height=400,onerror=redirect,format=auto/qnbDd/t6pC5j7rlwHJGYJezjbkPuAmdVtPMK98q2jF54YG.jpg"
+                  src="/logo.png"
                   alt="نحو الرشاقة - To Fitness"
+                  style={{ maxHeight: '60px', width: 'auto' }}
                 />
               </Link>
             </div>

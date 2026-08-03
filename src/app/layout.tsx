@@ -9,6 +9,8 @@ export const metadata: Metadata = {
   }
 };
 
+import FloatingButtons from "@/components/ui/FloatingButtons";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -21,6 +23,7 @@ export default function RootLayout({
       </head>
       <body>
         {children}
+        <FloatingButtons />
       </body>
     </html>
   );
