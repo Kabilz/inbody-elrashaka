@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "متجر نحو الرشاقة - To Fitness Store",
+  title: "متجر روح الرشاقة - Rouh AlRashaka Store",
   description: "مركز علاج السمنة والنحافة الشديدة. يضم خبراء تغذية متخصصين ومنتجات عالمية تساعدك في الوصول إلى وزنك المثالي.",
   icons: {
-    icon: "https://cdn.salla.sa/qnbDd/5ArmBJxi69kW2YcPWpFjDqUiWhcxClvkhLzi0HF0.jpg",
+    icon: "/logo.png",
   }
 };
 
