@@ -24,20 +24,20 @@ export default function FloatingButtons() {
 
   return (
     <>
-      <a 
-        href="https://wa.me/966591640335" 
-        className={styles.waBtn} 
-        target="_blank" 
+      <a
+        href="https://wa.me/966591640335"
+        className={styles.waBtn}
+        target="_blank"
         rel="noopener noreferrer"
         aria-label="تواصل عبر الواتساب"
       >
         <i className="fa-brands fa-whatsapp"></i>
-        <span>احجز موعدك الان</span>
+        <span>احجز موعد مجاني</span>
       </a>
 
-      <button 
-        className={`${styles.scrollBtn} ${showScroll ? styles.visible : ''}`} 
-        onClick={scrollToTop} 
+      <button
+        className={`${styles.scrollBtn} ${showScroll ? styles.visible : ''}`}
+        onClick={scrollToTop}
         aria-label="العودة للأعلى"
       >
         <i className="fa-solid fa-arrow-up"></i>

@@ -72,18 +72,17 @@ export default function Home() {
             <span style={{
               display: 'inline-block',
               padding: '10px 28px',
-              border: '2px solid var(--primary)',
-              borderRadius: '30px',
               fontSize: '.95rem',
               fontWeight: 800,
-              color: 'var(--primary)',
-              background: 'transparent',
+              color: 'white',
+
+              backgroundColor: 'var(--primary-dark)',
               cursor: 'pointer',
             }}>
               وصــــل حديــــثاً
             </span>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '20px' }}>
+          <div className="product-grid">
             {PRODUCTS_NEW.map(product => (
               <ProductCard key={product.id} {...product} />
             ))}
@@ -98,7 +97,7 @@ export default function Home() {
               <Link href="#" className="title-link">عرض الكل <i className="fa-solid fa-arrow-left"></i></Link>
             </h2>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '20px' }}>
+          <div className="product-grid">
             {PRODUCTS_SUMMER.map(product => (
               <ProductCard key={product.id} {...product} />
             ))}
@@ -107,7 +106,7 @@ export default function Home() {
 
         {/* ═══ 6. Two Banners ═══ */}
         <section className="container" style={{ marginBottom: '48px' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '24px' }}>
             <a href="https://wa.me/966591640335" className="promo-banner" style={{ aspectRatio: '3/2' }}>
               <img src="https://cdn.salla.sa/form-builder/QILJO4Ez4VT34YcMD2K5dqNvFByBsqZUj24nZqLs.jpg" alt="احجز موعدك الآن" />
               <div className="overlay"><span>احجز موعدك الآن</span></div>
@@ -125,18 +124,16 @@ export default function Home() {
             <span style={{
               display: 'inline-block',
               padding: '10px 28px',
-              border: '2px solid var(--primary)',
-              borderRadius: '30px',
               fontSize: '.95rem',
               fontWeight: 800,
-              color: 'var(--primary)',
-              background: 'transparent',
+              color: 'white',
+              backgroundColor: 'var(--primary-dark)',
               cursor: 'pointer',
             }}>
               عــــروض الاشـــــتراكـــات
             </span>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '20px' }}>
+          <div className="product-grid">
             {PRODUCTS_SUBSCRIPTIONS.map(product => (
               <ProductCard key={product.id} {...product} />
             ))}
@@ -184,29 +181,29 @@ export default function Home() {
         <section className="container" style={{ marginBottom: '72px' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
             {[
-              { icon: 'fa-medal', title: 'منتجات عالمية', desc: 'أكثر من ١٠٠ منتج لحياة صحية' },
-              { icon: 'fa-headset', title: 'خدمة متكاملة', desc: 'تسوق واستشر خبراء التغذية على مدار الساعة' },
-              { icon: 'fa-credit-card', title: 'ادفع الآن أو لاحقاً', desc: 'اختر من بين وسائل الدفع الأجل والمباشر بأمان تام' }
+              { icon: 'fa-award', title: 'منتجات عالميه', desc: 'أكثر من 100 منتج لحياه صحيه' },
+              { icon: 'fa-podcast', title: 'خدمه متكامله', desc: 'تسوق واستشر خبراء التغذيه علي مدار الساعه' },
+              { icon: 'fa-sack-dollar', title: 'ادفع الان أو لاحقا', desc: 'اختر من بين وسائل الدفع الأجل والمباشر بأمان تام' }
             ].map((feature, idx) => (
               <div key={idx} style={{
-                padding: '32px 24px',
-                background: 'var(--bg-grey)',
-                borderRadius: '16px',
+                padding: '48px 24px',
+                background: '#f4f5f6', // Light grey matching screenshot
+                borderRadius: '0', // Square corners like screenshot
                 textAlign: 'center',
                 transition: 'var(--transition)',
               }}>
                 <div style={{
-                  width: '56px', height: '56px',
-                  background: 'var(--primary-pale)',
-                  borderRadius: '14px',
+                  width: '80px', height: '80px',
+                  background: 'var(--primary)', // Dark green circle
+                  borderRadius: '50%',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  fontSize: '1.6rem', color: 'var(--primary)',
-                  margin: '0 auto 16px'
+                  fontSize: '2rem', color: '#fff',
+                  margin: '0 auto 24px'
                 }}>
                   <i className={`fa-solid ${feature.icon}`}></i>
                 </div>
-                <h4 style={{ fontSize: '1.05rem', fontWeight: 800, marginBottom: '8px' }}>{feature.title}</h4>
-                <p style={{ fontSize: '.88rem', color: 'var(--text-muted)' }}>{feature.desc}</p>
+                <h4 style={{ fontSize: '1.2rem', fontWeight: 900, marginBottom: '12px', color: '#111' }}>{feature.title}</h4>
+                <p style={{ fontSize: '.95rem', color: '#666', margin: 0 }}>{feature.desc}</p>
               </div>
             ))}
           </div>

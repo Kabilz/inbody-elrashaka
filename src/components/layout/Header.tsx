@@ -6,6 +6,7 @@ import styles from './Header.module.css';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,26 +18,22 @@ export default function Header() {
 
   return (
     <>
-      <div className={styles.announcementBar}>
-        <div className={styles.marqueeTrack}>
-          <span>🚚 شحن مجاني على الطلبات أكثر من ١٩٩ ريال</span>
-          <span>⚡ عروض الصيف – خصومات تصل إلى ٤٠٪</span>
-          <span>💪 تسوق واستشر خبراء التغذية على مدار الساعة</span>
-          <span>🚚 شحن مجاني على الطلبات أكثر من ١٩٩ ريال</span>
-          <span>⚡ عروض الصيف – خصومات تصل إلى ٤٠٪</span>
-        </div>
-      </div>
+
 
       <header className={styles.header} style={{ boxShadow: isScrolled ? '0 2px 16px rgba(0,0,0,.1)' : '0 1px 0 var(--border)' }}>
         <div className="container">
           <nav className={styles.topNav}>
-            
+
             <div className={styles.navLeft}>
-              <button className={styles.hamburger} aria-label="فتح القائمة">
-                <span /><span /><span />
+              <button className={`${styles.iconBtn} ${styles.hamburgerIcon}`} aria-label="فتح القائمة" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+                <i className="fa-solid fa-bars-staggered" />
               </button>
               <button className={styles.iconBtn} title="اللغة والعملة" aria-label="اللغة">
                 <i className="fa-solid fa-globe" />
+              </button>
+
+              <button className={`${styles.iconBtn} ${styles.mobileOnlyBtn}`} aria-label="الوضع الليلي">
+                <i className="fa-regular fa-moon" />
               </button>
               <div className={styles.headerContact}>
                 <a href="tel:+966591640335"><i className="fa-solid fa-phone" /> +966591640335</a>
@@ -48,20 +45,22 @@ export default function Header() {
                 <img
                   src="/logo.png"
                   alt="نحو الرشاقة - To Fitness"
-                  style={{ maxHeight: '60px', width: 'auto' }}
                 />
               </Link>
             </div>
 
             <div className={styles.navRight}>
-              <button className={styles.iconBtn} aria-label="بحث" title="بحث">
+              <Link href="/login" className={`${styles.iconBtn} ${styles.mobileOnlyBtn}`}>
+                <i className="fa-regular fa-user" />
+              </Link>
+              <button className={`${styles.iconBtn} ${styles.desktopOnlyBtn}`} aria-label="بحث" title="بحث">
                 <i className="fa-solid fa-magnifying-glass" />
               </button>
               <button className={styles.iconBtn} aria-label="السلة" title="سلة التسوق">
                 <i className="fa-solid fa-basket-shopping" />
-                <span className={styles.cartCount}>٣</span>
+                <span className={styles.cartCount}>0</span>
               </button>
-              <Link href="/login" className={styles.loginBtn}>
+              <Link href="/login" className={`${styles.loginBtn} ${styles.desktopOnlyBtn}`}>
                 <i className="fa-regular fa-user" />
                 <span className={styles.btnText}>تسجيل الدخول</span>
               </Link>
@@ -85,6 +84,33 @@ export default function Header() {
           </div>
         </div>
       </header>
+
+      {/* Mobile Menu Overlay */}
+      <div className={`${styles.mobileMenuOverlay} ${isMobileMenuOpen ? styles.mobileMenuOpen : ''}`}>
+        <div className={styles.mobileMenuClose} onClick={() => setIsMobileMenuOpen(false)}></div>
+        <div className={styles.mobileMenuContent}>
+          
+          <button className={styles.redCloseBtn} onClick={() => setIsMobileMenuOpen(false)}>
+            <i className="fa-solid fa-xmark"></i>
+          </button>
+
+          <div className={styles.mobileMenuLinks}>
+            <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>القائمة الرئيسية</Link>
+            <Link href="#" onClick={() => setIsMobileMenuOpen(false)}>تنظيف قولون</Link>
+            <Link href="#" onClick={() => setIsMobileMenuOpen(false)}>المدونة</Link>
+            <Link href="#" onClick={() => setIsMobileMenuOpen(false)}>جميع المنتجات</Link>
+            <Link href="#" onClick={() => setIsMobileMenuOpen(false)}>مكملات غذائية</Link>
+            <Link href="#" onClick={() => setIsMobileMenuOpen(false)}>تخفيضات</Link>
+            <Link href="#" onClick={() => setIsMobileMenuOpen(false)}>الاشتراكات و الانظمه الغذائيه</Link>
+            <Link href="#" onClick={() => setIsMobileMenuOpen(false)} className={styles.hasSub}>
+              منتجات التنحيف
+              <i className="fa-solid fa-chevron-left" style={{ fontSize: '12px', color: '#888' }}></i>
+            </Link>
+            <Link href="#" onClick={() => setIsMobileMenuOpen(false)}>منتجات صحه القولون و الجهاز الهضمي</Link>
+            <Link href="#" onClick={() => setIsMobileMenuOpen(false)}>صحه المرأه</Link>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

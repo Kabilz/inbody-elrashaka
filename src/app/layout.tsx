@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 };
 
 import FloatingButtons from "@/components/ui/FloatingButtons";
+import MobileBottomNav from "@/components/layout/MobileBottomNav";
 
 export default function RootLayout({
   children,
@@ -24,6 +25,7 @@ export default function RootLayout({
       <body>
         {children}
         <FloatingButtons />
+        <MobileBottomNav />
       </body>
     </html>
   );

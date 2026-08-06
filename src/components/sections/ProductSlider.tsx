@@ -12,7 +12,6 @@ interface Product {
   oldPrice?: number;
   discountBadge?: string;
   newBadge?: boolean;
-  rating?: number;
   reviewsCount?: number;
 }
 

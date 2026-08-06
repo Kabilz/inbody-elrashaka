@@ -1,62 +1,50 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import styles from '../AuthLayout.module.css';
 
 export default function RegisterPage() {
-  const [showPassword, setShowPassword] = useState(false);
-
   return (
     <>
-      <h1 className={styles.title}>إنشاء حساب جديد</h1>
-      <p className={styles.desc}>انضم إلى عائلة نحو الرشاقة وابدأ رحلتك الصحية اليوم</p>
-
       <form onSubmit={(e) => e.preventDefault()}>
         <div className={styles.formGroup}>
-          <label className={styles.label}>الاسم الكامل</label>
+          <label className={styles.label}>اسمك الكريم</label>
           <div className={styles.inputWrap}>
-            <input type="text" className={styles.input} placeholder="الاسم الثلاثي" required />
+            <input type="text" className={styles.input} placeholder="الاسم الأول" required />
+          </div>
+        </div>
+
+        <div className={styles.formGroup}>
+          <label className={styles.label}>الاسم الأخير</label>
+          <div className={styles.inputWrap}>
+            <input type="text" className={styles.input} placeholder="الاسم الأخير" required />
           </div>
         </div>
 
         <div className={styles.formGroup}>
           <label className={styles.label}>رقم الجوال</label>
-          <div className={styles.inputWrap}>
-            <input type="tel" className={styles.input} placeholder="05xxxxxxxx" required style={{ direction: 'ltr', textAlign: 'right' }} />
+          <div className={`${styles.inputWrap} ${styles.phoneWrap}`}>
+            <input type="tel" className={`${styles.input} ${styles.phoneInput}`} placeholder="05xxxxxxxx" required style={{ direction: 'ltr', textAlign: 'left' }} />
+            <div className={styles.countryCode}>
+              <span>+20</span>
+              <i className="fa-solid fa-chevron-down"></i>
+            </div>
           </div>
         </div>
 
-        <div className={styles.formGroup}>
-          <label className={styles.label}>البريد الإلكتروني</label>
-          <div className={styles.inputWrap}>
-            <input type="email" className={styles.input} placeholder="example@domain.com" required />
-          </div>
-        </div>
-
-        <div className={styles.formGroup}>
-          <label className={styles.label}>كلمة المرور</label>
-          <div className={styles.inputWrap}>
-            <input type={showPassword ? "text" : "password"} className={styles.input} placeholder="ادخل كلمة المرور" required />
-            <i 
-              className={`fa-solid ${showPassword ? 'fa-eye-slash' : 'fa-eye'} ${styles.inputIcon}`} 
-              onClick={() => setShowPassword(!showPassword)}
-            />
-          </div>
-        </div>
-
-        <div className={styles.formGroup} style={{ display: 'flex', gap: '8px', alignItems: 'center', marginTop: '20px' }}>
-          <input type="checkbox" id="terms" required style={{ width: '18px', height: '18px', cursor: 'pointer' }} />
-          <label htmlFor="terms" style={{ fontSize: '.85rem', color: 'var(--text-muted)', cursor: 'pointer' }}>
-            أوافق على <Link href="#" style={{ color: 'var(--primary)' }}>الشروط والأحكام</Link> و <Link href="#" style={{ color: 'var(--primary)' }}>سياسة الخصوصية</Link>
+        <div className={styles.formGroup} style={{ display: 'flex', gap: '12px', alignItems: 'center', marginTop: '24px', justifyContent: 'center' }}>
+          <label htmlFor="promo" style={{ fontSize: '.95rem', color: '#111', cursor: 'pointer', fontWeight: 600 }}>
+            أرغب بتلقي الرسائل الترويجية عبر البريد الإلكتروني
           </label>
+          <input type="checkbox" id="promo" defaultChecked style={{ width: '20px', height: '20px', cursor: 'pointer', accentColor: 'var(--primary)' }} />
         </div>
 
-        <button type="submit" className={styles.submitBtn}>إنشاء حساب</button>
+        <button type="submit" className={styles.submitBtn}>التسجيل</button>
       </form>
 
-      <div className={styles.bottomLink}>
-        لديك حساب بالفعل؟ <Link href="/login">تسجيل الدخول</Link>
+      <div className={styles.privacyLink}>
+        بالتسجيل، فإنك توافق على <Link href="#">سياسة الخصوصية</Link>
       </div>
     </>
   );

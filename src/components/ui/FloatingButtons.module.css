@@ -59,3 +59,9 @@
   background: var(--primary-dark);
   transform: translateY(-4px);
 }
+@media (max-width: 768px) {
+  .waBtn, .scrollBtn {
+    bottom: 84px;
+  }
+}
+

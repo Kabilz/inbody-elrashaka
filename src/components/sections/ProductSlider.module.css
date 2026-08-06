@@ -86,8 +86,11 @@
 }
 
 @media (max-width: 768px) {
+  .track {
+    gap: 12px;
+  }
   .slide {
-    flex: 0 0 180px;
+    flex: 0 0 calc(50% - 6px);
   }
   .navBtn {
     display: none;
