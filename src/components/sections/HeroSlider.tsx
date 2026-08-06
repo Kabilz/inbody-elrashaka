@@ -7,9 +7,9 @@ import styles from './HeroSlider.module.css';
 const SLIDES = [
   {
     id: 0,
-    image: '/hero-image.png',
-    title: 'وصل حديثاً\nمنتجات عالمية',
-    desc: 'اكتشف أحدث منتجات التغذية والرشاقة المختارة بعناية',
+    image: '/Hero-image.png',
+    title: 'عيادة التغذية',
+    desc: 'تواصل معنا: 0591640335',
     btnLink: '/'
   },
 ];

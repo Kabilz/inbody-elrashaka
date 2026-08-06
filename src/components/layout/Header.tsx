@@ -36,7 +36,7 @@ export default function Header() {
                 <i className="fa-regular fa-moon" />
               </button>
               <div className={styles.headerContact}>
-                <a href="tel:+966591640335"><i className="fa-solid fa-phone" /> +966591640335</a>
+                <a href="tel:0591640335"><i className="fa-solid fa-phone" /> 0591640335</a>
               </div>
             </div>
 
@@ -44,7 +44,7 @@ export default function Header() {
               <Link href="/" className={styles.navLogo}>
                 <img
                   src="/logo.png"
-                  alt="نحو الرشاقة - To Fitness"
+                  alt="روح الرشاقة"
                 />
               </Link>
             </div>

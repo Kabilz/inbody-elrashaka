@@ -108,7 +108,8 @@ export default function Home() {
         <section className="container" style={{ marginBottom: '48px' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '24px' }}>
             <a href="https://wa.me/966591640335" className="promo-banner" style={{ aspectRatio: '3/2' }}>
-              <img src="https://cdn.salla.sa/form-builder/QILJO4Ez4VT34YcMD2K5dqNvFByBsqZUj24nZqLs.jpg" alt="احجز موعدك الآن" />
+              <img src="/fahs.png" alt="احجز موعدك الآن" />
+
               <div className="overlay"><span>احجز موعدك الآن</span></div>
             </a>
             <a href="#" className="promo-banner" style={{ aspectRatio: '3/2' }}>

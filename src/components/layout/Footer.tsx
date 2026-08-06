@@ -14,12 +14,12 @@ export default function Footer() {
       <div className={styles.container}>
         {/* Logo */}
         <div className={styles.logoWrap}>
-          <img src="/logo.jpeg" alt="نحو الرشاقة" />
+          <img src="/logo.jpeg" alt="روح الرشاقة" />
         </div>
 
         {/* Text */}
         <p className={styles.desc}>
-          "نحو الرشاقة" هو المركز الفريد كلياً في السعودية برؤيته في دعم رواده لإتباع أنماط الحياة الصحية من خلال أفضل خبراء التغذية و أنظمة غذائية ذكية ومنتجات منوعة تمكن من الوصول إلي الوزن المثالي
+          "روح الرشاقة" هو المركز الفريد كلياً في السعودية برؤيته في دعم رواده لإتباع أنماط الحياة الصحية من خلال أفضل خبراء التغذية و أنظمة غذائية ذكية ومنتجات منوعة تمكن من الوصول إلي الوزن المثالي
         </p>
 
         {/* Social */}
@@ -33,7 +33,7 @@ export default function Footer() {
         <div className={styles.registryBlock}>
           <div className={styles.registryText}>
             <div>السجل التجاري</div>
-            <div style={{ fontWeight: 800 }}>1010792487</div>
+            <div style={{ fontWeight: 800 }}>0192992929292</div>
           </div>
           <div className={styles.registryImgWrap}>
             <img src="https://cdn.salla.network/images/sbc.png?v=1" alt="سجل تجاري" className={styles.registryImg} onError={(e) => { e.currentTarget.style.display = 'none'; e.currentTarget.parentElement!.innerHTML = '<i class="fa-solid fa-scale-balanced" style="font-size: 32px; color: #fff;"></i>'; }} />
@@ -71,7 +71,7 @@ export default function Footer() {
         <div className={styles.vatBlock}>
           <div className={styles.vatText}>
             <div>الرقم الضريبي</div>
-            <div style={{ fontWeight: 800 }}>311101960600003</div>
+            <div style={{ fontWeight: 800 }}>11111111111111111</div>
           </div>
           <img src="https://cdn.salla.network/images/tax.png?v=2.0.5" alt="الرقم الضريبي" className={styles.vatImg} />
         </div>
