@@ -10,9 +10,8 @@ const SLIDES = [
     image: '/hero-image.png',
     title: 'وصل حديثاً\nمنتجات عالمية',
     desc: 'اكتشف أحدث منتجات التغذية والرشاقة المختارة بعناية',
-
+    btnLink: '/'
   },
-
 ];
 
 export default function HeroSlider() {
